@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		5C50033C25A8CE8E0080A3E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C50033B25A8CE8E0080A3E1 /* Assets.xcassets */; };
 		5C50033F25A8CE8E0080A3E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C50033D25A8CE8E0080A3E1 /* LaunchScreen.storyboard */; };
 		5C50034A25A8D20D0080A3E1 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50034925A8D20D0080A3E1 /* InputViewController.swift */; };
+		5C50035225A8E11A0080A3E1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C50035125A8E11A0080A3E1 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5C50033E25A8CE8E0080A3E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C50034025A8CE8E0080A3E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C50034925A8D20D0080A3E1 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		5C50035125A8E11A0080A3E1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5D6286E94227B4CD62D4CFFD /* Pods-reading.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reading.release.xcconfig"; path = "Target Support Files/Pods-reading/Pods-reading.release.xcconfig"; sourceTree = "<group>"; };
 		D7A9D675A87C1279485CC299 /* Pods_reading.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reading.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC5487DA54C28B07654B708 /* Pods-reading.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reading.debug.xcconfig"; path = "Target Support Files/Pods-reading/Pods-reading.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				5C50033B25A8CE8E0080A3E1 /* Assets.xcassets */,
 				5C50033D25A8CE8E0080A3E1 /* LaunchScreen.storyboard */,
 				5C50034025A8CE8E0080A3E1 /* Info.plist */,
+				5C50035125A8E11A0080A3E1 /* Task.swift */,
 			);
 			path = reading;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				FBC5487DA54C28B07654B708 /* Pods-reading.debug.xcconfig */,
 				5D6286E94227B4CD62D4CFFD /* Pods-reading.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -211,6 +213,7 @@
 			files = (
 				5C50033725A8CE8D0080A3E1 /* ViewController.swift in Sources */,
 				5C50033325A8CE8D0080A3E1 /* AppDelegate.swift in Sources */,
+				5C50035225A8E11A0080A3E1 /* Task.swift in Sources */,
 				5C50033525A8CE8D0080A3E1 /* SceneDelegate.swift in Sources */,
 				5C50034A25A8D20D0080A3E1 /* InputViewController.swift in Sources */,
 			);
@@ -289,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -344,9 +347,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -367,7 +371,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.kazunobu.ide.reading;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.kazunobu.ide.reading1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -387,7 +391,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.kazunobu.ide.reading;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.kazunobu.ide.reading1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
