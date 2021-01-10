@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -160,7 +159,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8dm-eC-mLK">
                                 <rect key="frame" x="10" y="196.5" width="394" height="26.5"/>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -172,7 +170,6 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4la-uW-szf">
                                 <rect key="frame" x="10" y="550.5" width="394" height="26.5"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -181,7 +178,6 @@
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6R-TG-PtP">
                                 <rect key="frame" x="10" y="129" width="394" height="26.5"/>
-                                <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -253,7 +249,16 @@
                     <connections>
                         <outlet property="contentsTextField" destination="8dm-eC-mLK" id="DH5-vu-66t"/>
                         <outlet property="datePicker" destination="hWN-01-A9J" id="Rfc-vN-bfl"/>
+                        <outlet property="label10TextField" destination="xan-7g-APn" id="smi-7d-txf"/>
                         <outlet property="label1TextField" destination="S2i-QX-I8H" id="0TS-6b-ST2"/>
+                        <outlet property="label2TextField" destination="PhK-cT-Bg7" id="jhG-M9-CMD"/>
+                        <outlet property="label3TextField" destination="LW6-XW-8Ce" id="YnP-Rr-ERz"/>
+                        <outlet property="label4TextField" destination="dFa-iT-Z69" id="gPN-ic-hjA"/>
+                        <outlet property="label5TextField" destination="KsG-3T-kRM" id="LU3-SB-WVA"/>
+                        <outlet property="label6TextField" destination="Xg0-za-dfA" id="Ha3-bd-eyP"/>
+                        <outlet property="label7TextField" destination="0DN-6p-ChJ" id="Kvf-Yx-oCB"/>
+                        <outlet property="label8TextField" destination="eby-FW-54J" id="2fM-k5-hrR"/>
+                        <outlet property="label9TextField" destination="hM5-4j-gKD" id="8LN-Jm-gjr"/>
                         <outlet property="summarizeTextField" destination="4la-uW-szf" id="FKk-oA-s5q"/>
                         <outlet property="titleTextField" destination="K6R-TG-PtP" id="LHn-cz-L9N"/>
                     </connections>
@@ -285,17 +290,8 @@
         <segue reference="ETW-Ln-zkB"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
