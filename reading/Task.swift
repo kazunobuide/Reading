@@ -18,6 +18,9 @@ class Task: Object {
     // 内容
     @objc dynamic var contents = ""
     
+    // 内容
+    @objc dynamic var author = ""
+    
     // メモ
     @objc dynamic var label1 = ""
     @objc dynamic var label2 = ""

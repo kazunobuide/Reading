@@ -12,6 +12,8 @@ class InputViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var contentsTextField: UITextField!
     @IBOutlet weak var summarizeTextField: UITextField!
+    //(著者名を追加)
+    @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var label1TextField: UITextField!
     @IBOutlet weak var label2TextField: UITextField!
@@ -28,102 +30,80 @@ class InputViewController: UIViewController, UITextFieldDelegate  {
     let realm = try! Realm()
     var task: Task!
     
-    // 入力可能な最大文字数
-    let maxLength: Int = 5
-    
     override func viewDidLoad(){
-        // 入力可能な最大文字数
-        let maxLength: Int = 5
+        
         super.viewDidLoad()
         
         summarizeTextField.delegate = self
         
-        // myTextFieldの入力チェック(文字数チェック)をオブザーバ登録
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(textFieldDidChange(notification:)),
-                                               name: UITextField.textDidChangeNotification,
-                                               object: summarizeTextField)
+        // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tapGesture)
+        
+        titleTextField.text = task.title
+        contentsTextField.text = task.contents
+        //まとめを追加
+        summarizeTextField.text = task.summarize
+        //著者名を追加
+        authorTextField.text = task.author
+        label1TextField.text = task.label1
+        label2TextField.text = task.label2
+        label3TextField.text = task.label3
+        label4TextField.text = task.label4
+        label5TextField.text = task.label5
+        label6TextField.text = task.label6
+        label7TextField.text = task.label7
+        label8TextField.text = task.label8
+        label9TextField.text = task.label9
+        label10TextField.text = task.label10
+        datePicker.date = task.date
     }
     
-    // オブザーバの破棄
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    @objc func dismissKeyboard(){
+        // キーボードを閉じる
+        view.endEditing(true)
     }
     
-    // 入力チェック(文字数チェック)処理
-    @objc func textFieldDidChange(notification: NSNotification) {
-        let textField = notification.object as! UITextField
-        
-        if let text = summarizeTextField.text {
-            if summarizeTextField.markedTextRange == nil && text.count > maxLength {
-                summarizeTextField.text = text.prefix(maxLength).description
-            }
+    override func viewWillDisappear(_ animated: Bool) {
+        try! realm.write {
+            self.task.title = self.titleTextField.text!
+            self.task.contents = self.contentsTextField.text!
+            self.task.date = self.datePicker.date
+            //まとめ他を追加
+            self.task.summarize = self.summarizeTextField.text!
+            //著者名を追加
+            self.task.author = self.authorTextField.text!
+            self.task.label1 = self.label1TextField.text!
+            self.task.label2 = self.label2TextField.text!
+            self.task.label3 = self.label3TextField.text!
+            self.task.label4 = self.label4TextField.text!
+            self.task.label5 = self.label5TextField.text!
+            self.task.label6 = self.label6TextField.text!
+            self.task.label7 = self.label7TextField.text!
+            self.task.label8 = self.label8TextField.text!
+            self.task.label9 = self.label9TextField.text!
+            self.task.label10 = self.label10TextField.text!
             
-            // 背景をタップしたらdismissKeyboardメソッドを呼ぶように設定する
-            let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target:self, action:#selector(dismissKeyboard))
-            self.view.addGestureRecognizer(tapGesture)
-            
-            titleTextField.text = task.title
-            contentsTextField.text = task.contents
-            //まとめを追加
-            summarizeTextField.text = task.summarize
-            label1TextField.text = task.label1
-            label2TextField.text = task.label2
-            label3TextField.text = task.label3
-            label4TextField.text = task.label4
-            label5TextField.text = task.label5
-            label6TextField.text = task.label6
-            label7TextField.text = task.label7
-            label8TextField.text = task.label8
-            label9TextField.text = task.label9
-            label10TextField.text = task.label10
-            datePicker.date = task.date
+            self.realm.add(self.task, update: .modified)
         }
         
-        @objc func dismissKeyboard(){
-            // キーボードを閉じる
-            view.endEditing(true)
-        }
-        
-        override func viewWillDisappear(_ animated: Bool) {
-            try! realm.write {
-                self.task.title = self.titleTextField.text!
-                self.task.contents = self.contentsTextField.text!
-                self.task.date = self.datePicker.date
-                //まとめ他を追加
-                self.task.summarize = self.summarizeTextField.text!
-                self.task.label1 = self.label1TextField.text!
-                self.task.label2 = self.label2TextField.text!
-                self.task.label3 = self.label3TextField.text!
-                self.task.label4 = self.label4TextField.text!
-                self.task.label5 = self.label5TextField.text!
-                self.task.label6 = self.label6TextField.text!
-                self.task.label7 = self.label7TextField.text!
-                self.task.label8 = self.label8TextField.text!
-                self.task.label9 = self.label9TextField.text!
-                self.task.label10 = self.label10TextField.text!
-                
-                self.realm.add(self.task, update: .modified)
-            }
-            
-            super.viewWillDisappear(animated)
-        }
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
-        
-        
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
+        super.viewWillDisappear(animated)
     }
+    
+    
+    
+    
+    // Do any additional setup after loading the view.
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

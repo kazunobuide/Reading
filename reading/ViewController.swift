@@ -100,7 +100,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                //検索文字列が空の場合はすべてを表示する。
                taskArray = try! Realm().objects(Task.self).sorted(byKeyPath: "date", ascending:  false)
            } else {
-               taskArray = try! Realm().objects(Task.self).filter("date CONTAINS '\(searchText)'").sorted(byKeyPath: "date", ascending: false)
+               taskArray = try! Realm().objects(Task.self).filter("title CONTAINS '\(searchText)'").sorted(byKeyPath: "date", ascending: false)
            }
            //テーブルを再読み込みする。
            tableView.reloadData()
